@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>You Matter</title>
     <style>
         * {
@@ -13,10 +13,11 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #E6E6FA 0%, #DDA0DD 50%, #9370DB 100%);
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            color: #333;
         }
 
         .floating-shapes {
@@ -32,65 +33,59 @@
         .shape {
             position: absolute;
             border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-            opacity: 0.3;
+            animation: float 15s linear infinite;
+            opacity: 0.6;
         }
-
-        .shape:nth-child(1) { background: #E6E6FA; width: 20px; height: 20px; }
-        .shape:nth-child(2) { background: #DDA0DD; width: 15px; height: 15px; }
-        .shape:nth-child(3) { background: #9370DB; width: 25px; height: 25px; }
 
         @keyframes float {
             0% {
                 transform: translateY(100vh) translateX(0);
                 opacity: 0;
             }
-            10% {
-                opacity: 0.3;
+            20% {
+                opacity: 0.6;
             }
-            90% {
-                opacity: 0.3;
+            80% {
+                opacity: 0.6;
             }
             100% {
-                transform: translateY(-100px) translateX(50px);
+                transform: translateY(-100px) translateX(100px);
                 opacity: 0;
             }
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
             position: relative;
             z-index: 2;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 60px;
-            animation: fadeInDown 1s ease-out;
+            margin-bottom: 80px;
+            animation: fadeInDown 1.5s ease-out;
         }
 
         .header h1 {
-            font-size: 4em;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-size: 4.5em;
+            color: #4a235a;
             margin-bottom: 20px;
-            font-weight: normal;
-            letter-spacing: 2px;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .header p {
-            font-size: 1.4em;
-            color: rgba(255,255,255,0.9);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-size: 1.6em;
+            color: #7f8c8d;
             font-style: italic;
         }
 
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-40px);
             }
             to {
                 opacity: 1;
@@ -100,330 +95,494 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            margin-bottom: 80px;
         }
 
         .card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 25px;
-            padding: 40px;
+            background: rgba(255,255,255,0.92);
+            border-radius: 20px;
+            padding: 50px 40px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
         .card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-            background: rgba(255,255,255,1);
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
         }
 
         .card h3 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            font-weight: normal;
+            color: #4a235a;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 300;
         }
 
         .card p {
-            color: #555;
+            color: #7f8c8d;
             line-height: 1.8;
-            margin-bottom: 30px;
-            font-size: 1.1em;
+            margin-bottom: 35px;
+            font-size: 1.2em;
         }
 
         .btn {
-            background: linear-gradient(135deg, #9370DB, #DDA0DD);
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 18px 35px;
             border-radius: 30px;
             font-size: 1.1em;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            font-weight: bold;
-            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(142, 68, 173, 0.3);
+            font-weight: normal;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(142, 68, 173, 0.4);
         }
 
         .message-section {
             background: rgba(255,255,255,0.95);
-            border-radius: 25px;
-            padding: 50px;
-            margin: 40px 0;
+            border-radius: 20px;
+            padding: 60px;
+            margin: 60px 0;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
         }
 
         .message {
-            font-size: 1.6em;
-            color: #333;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            font-weight: normal;
+            font-size: 1.8em;
+            color: #4a235a;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
         }
 
         .mood-tracker {
             background: rgba(255,255,255,0.95);
-            border-radius: 25px;
-            padding: 50px;
-            margin: 40px 0;
+            border-radius: 20px;
+            padding: 60px;
+            margin: 60px 0;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .mood-tracker h2 {
+            color: #4a235a;
+            font-weight: 300;
+            margin-bottom: 40px;
+            font-size: 2em;
         }
 
         .mood-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
+            gap: 25px;
+            margin: 40px 0;
             flex-wrap: wrap;
         }
 
         .mood-btn {
-            background: linear-gradient(135deg, #B19CD9, #9370DB);
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
             color: white;
             border: none;
-            padding: 15px 25px;
-            border-radius: 25px;
-            font-size: 1em;
+            padding: 18px 30px;
+            border-radius: 30px;
+            font-size: 1.1em;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(142, 68, 173, 0.3);
+            font-weight: normal;
+            min-width: 120px;
+            user-select: none;
         }
 
         .mood-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(142, 68, 173, 0.4);
         }
 
         .mood-response {
-            margin-top: 30px;
-            padding: 30px;
-            background: rgba(255,255,255,0.8);
+            margin-top: 40px;
+            padding: 40px;
+            background: rgba(255,255,255,0.85);
             border-radius: 20px;
-            min-height: 80px;
+            min-height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3em;
-            color: #333;
-            line-height: 1.6;
+            font-size: 1.5em;
+            color: #4a235a;
+            line-height: 1.7;
+            font-weight: 300;
+            border: 1px solid rgba(0,0,0,0.05);
+            user-select: none;
         }
 
         .gentle-glow {
-            animation: gentleGlow 2s ease-in-out;
+            animation: gentleGlow 3s ease-in-out;
         }
 
         @keyframes gentleGlow {
-            0% { background: rgba(255,255,255,0.8); }
-            50% { background: rgba(230,230,250,0.9); }
-            100% { background: rgba(255,255,255,0.8); }
+            0% { background: rgba(255,255,255,0.85); }
+            50% { background: rgba(245, 247, 250, 0.9); }
+            100% { background: rgba(255,255,255,0.85); }
+        }
+
+        .memory-box {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 60px;
+            margin: 60px 0;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .memory-title {
+            font-size: 2.2em;
+            color: #4a235a;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .memory-content {
+            font-size: 1.4em;
+            color: #7f8c8d;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .memory-input {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            resize: none;
+            min-height: 150px;
+            font-family: 'Georgia', serif;
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(142, 68, 173, 0.3);
+            user-select: none;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(142, 68, 173, 0.4);
+        }
+
+        .saved-memories {
+            margin-top: 50px;
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .memory-item {
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 5px solid #8e44ad;
+            word-break: break-word;
+        }
+
+        .memory-date {
+            color: #8e44ad;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            user-select: text;
+        }
+
+        .memory-text {
+            font-size: 1.2em;
+            line-height: 1.7;
+            color: #4a235a;
+            user-select: text;
+            white-space: pre-wrap;
         }
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2.8em;
+                font-size: 3em;
             }
             .grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
-            .card, .message-section, .mood-tracker {
-                padding: 30px;
+            .card, .message-section, .mood-tracker, .memory-box {
+                padding: 40px 30px;
+            }
+            .mood-buttons {
+                gap: 15px;
+            }
+            .mood-btn {
+                padding: 15px 25px;
+                min-width: 100px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-    
+    <div class="floating-shapes" id="floatingShapes"></div>
+
     <div class="container">
         <div class="header">
             <h1>You Matter</h1>
-            <p>More than you could ever know</p>
+            <p>This world needed someone just like you</p>
         </div>
 
         <div class="message-section">
             <div class="message" id="mainMessage">
-                You were born with a purpose that only you can fulfill. The world has been waiting for exactly who you are.
+                There has never been anyone like you, and there never will be again. The universe took a long time to make this moment with you.
             </div>
         </div>
 
         <div class="grid">
-            <div class="card" onclick="showMessage('inspiration')">
-                <h3>When You Need Light</h3>
-                <p>Sometimes we forget how much we mean to this world. Let me remind you.</p>
-                <button class="btn">Show Me</button>
+            <div class="card" onclick="showMessage('worth')">
+                <h3>When You Doubt Yourself</h3>
+                <p>You are not just what you do or what you achieve. Just being you is enough.</p>
+                <button class="btn" tabindex="0">Remind Me</button>
             </div>
 
-            <div class="card" onclick="showMessage('strength')">
-                <h3>When You Feel Small</h3>
-                <p>You carry more strength than you realize. You always have.</p>
-                <button class="btn">Tell Me More</button>
+            <div class="card" onclick="showMessage('pain')">
+                <h3>When It Hurts Too Much</h3>
+                <p>This dark time is not the end. You will come out stronger and more amazing.</p>
+                <button class="btn" tabindex="0">I Need Hope</button>
             </div>
 
-            <div class="card" onclick="showMessage('love')">
+            <div class="card" onclick="showMessage('connection')">
                 <h3>When You Feel Alone</h3>
-                <p>There are people whose lives are brighter because you exist.</p>
-                <button class="btn">Help Me See</button>
+                <p>Every person you've met carries a piece of you. You matter more than you know.</p>
+                <button class="btn" tabindex="0">Show Me</button>
             </div>
-            
-            <div class="card" onclick="showMessage('sad')">
-                <h3>When You Feel Sad</h3>
-                <p>Your feelings are valid and temporary. Let me offer some comfort.</p>
-                <button class="btn">I Need Comfort</button>
+
+            <div class="card" onclick="showMessage('future')">
+                <h3>When The Future Feels Heavy</h3>
+                <p>There are versions of you in the future who will be thankful you kept going.</p>
+                <button class="btn" tabindex="0">Tell Me More</button>
             </div>
         </div>
 
         <div class="mood-tracker">
-            <h2>How does your heart feel right now?</h2>
+            <h2>How is your heart today?</h2>
             <div class="mood-buttons">
-                <button class="mood-btn" onclick="handleMood('heavy')">Heavy</button>
-                <button class="mood-btn" onclick="handleMood('sad')">Sad</button>
-                <button class="mood-btn" onclick="handleMood('lost')">Lost</button>
-                <button class="mood-btn" onclick="handleMood('tired')">Tired</button>
-                <button class="mood-btn" onclick="handleMood('okay')">Okay</button>
-                <button class="mood-btn" onclick="handleMood('hopeful')">Hopeful</button>
+                <button class="mood-btn" onclick="handleMood('broken')" tabindex="0">Shattered</button>
+                <button class="mood-btn" onclick="handleMood('weary')" tabindex="0">Heavy</button>
+                <button class="mood-btn" onclick="handleMood('adrift')" tabindex="0">Lost</button>
+                <button class="mood-btn" onclick="handleMood('quiet')" tabindex="0">Quiet</button>
+                <button class="mood-btn" onclick="handleMood('glimmer')" tabindex="0">Happy</button>
             </div>
             <div class="mood-response" id="moodResponse">
-                Your feelings are safe here. Choose what fits.
+                However you feel is okay. There’s no wrong way to be.
+            </div>
+        </div>
+
+        <div class="memory-box">
+            <h2 class="memory-title">Moments to Remember</h2>
+            <p class="memory-content">When life feels heavy, remember the good times. Write them here so you never forget.</p>
+            <textarea class="memory-input" id="memoryInput" placeholder="Write about a moment that mattered..." aria-label="Write about a moment that mattered"></textarea>
+            <button class="save-btn" onclick="saveMemory()" tabindex="0">Save This Memory</button>
+
+            <div class="saved-memories" id="savedMemories" aria-live="polite" aria-relevant="additions">
+                <!-- Memories will appear here -->
             </div>
         </div>
     </div>
 
     <script>
         const messages = {
-            inspiration: [
-                "Your mother held you for the first time and knew that nothing would ever be the same. You were her miracle then. You still are now.",
-                "Every night when you were small, someone checked on you while you slept, just to make sure you were breathing. You were loved before you even knew what love was.",
-                "There is a photo somewhere of you as a child, laughing, and whoever took it thought you were the most beautiful thing they had ever seen. They were right.",
-                "Someone taught you how to tie your shoes, how to say please and thank you, how to be kind. They saw something precious in you worth nurturing.",
-                "You have made someone proud just by existing. Not by achieving anything. Just by being here, being you."
+            worth: [
+                "When you were born, people were amazed by you. You are still that amazing person.",
+                "You have made it through every tough day. That shows your strength.",
+                "There are people who think of you in special moments. You live in their hearts.",
+                "Your worth is not in what you do but in how you see the world. No one else sees it like you do.",
+                "Someone is better because they know you. You make a difference."
             ],
-            strength: [
-                "Your grandmother would look at you now and cry with pride. All those prayers she whispered for your future, they led to this moment, to you.",
-                "Every time you thought you couldn't go on, but you did anyway, you honored every person who ever believed in you.",
-                "You are the descendant of people who survived wars, famines, heartbreak, and loss. Their strength runs through your veins.",
-                "Someone who is no longer here would be so proud of how far you have come. They are still cheering for you from wherever they are.",
-                "The child you used to be would look at you now and think you are exactly the hero they always hoped they would become."
+            pain: [
+                "Your pain shows how much you can feel. It means you have a lot of love inside you.",
+                "One day, this pain will be part of your story, not the whole story. You will gain wisdom from it.",
+                "Crying shows you care. It’s okay to feel deeply.",
+                "You don’t have to carry this pain alone. There are people who want to help you.",
+                "You will come out of this stronger and wiser. This struggle will be part of your strength."
             ],
-            love: [
-                "Your name is written in someone's prayer journal. You are being asked for in quiet moments when they think no one is listening.",
-                "There is someone who falls asleep easier at night knowing you exist in this world. Your presence is their peace.",
-                "A child somewhere has drawn a picture of their family, and you are in it. You belong in ways you cannot even imagine.",
-                "Someone has kept every text message you sent them. They read them again when the world feels too heavy.",
-                "There are people who mention your name when they talk about what goodness looks like. You are their example of hope."
+            connection: [
+                "Think of all the people you’ve touched. You are part of many lives.",
+                "There are songs and places that remind people of you. You are remembered.",
+                "Every kind thing you’ve done lives on in others. You started a chain of kindness.",
+                "Even when you feel alone, parts of you are held by others.",
+                "Your laughter and words have changed lives. You matter."
             ],
-            sad: [
-                "The people who love you would want to hold you right now. Imagine their arms around you - that love is still real even when you can't feel it.",
-                "Your sadness doesn't make you a burden. It makes you human. The people who care about you know this.",
-                "Someone once watched you sleep and thought you were the most peaceful sight in the world. That version of you still exists.",
-                "The person who taught you how to ride a bike would tell you that falling doesn't mean you failed. It just means you're learning.",
-                "There is a version of you from the past who would be amazed at how much you've survived. You're stronger than you know."
+            future: [
+                "Future you will look back and be proud of how far you’ve come.",
+                "The person you are becoming needs you to keep going. They will thank you.",
+                "Better days are ahead. Keep moving forward.",
+                "This struggle will make you stronger. It’s part of your journey.",
+                "Your story isn’t over yet. There are good chapters ahead."
             ]
         };
 
         const moodResponses = {
-            heavy: [
-                "Your pain is proof that you have loved deeply. Only hearts that care this much can hurt this much. That love still lives in you.",
-                "The person who worried about you taking your first steps would want you to know that stumbling is still moving forward.",
-                "Someone who held you when you cried as a child would hold you now if they could. That love never left you."
+            broken: [
+                "A heart that can break is a heart that can love deeply. This pain shows your strength.",
+                "Someone who loves you wants to help carry this pain. You are not alone.",
+                "Your scars will one day be your most beautiful parts."
             ],
-            sad: [
-                "Tears are how our heart speaks when our lips can't explain the pain. Someone who loves you would wipe them away if they could.",
-                "Your sadness is not permanent, even if it feels that way. The people who care about you are waiting for your light to return.",
-                "Someone once promised to always be there for you. Even if they're not here now, that promise still matters. You're not alone."
+            weary: [
+                "Even the strongest trees bend in the wind. Your tiredness shows how long you've stood strong.",
+                "Rest is not giving up. It’s a way to keep going.",
+                "The people who love you care about you, not what you do."
             ],
-            lost: [
-                "The person who taught you your first word believed you had important things to say. They still do. Your voice still matters.",
-                "You are not lost. You are becoming. Every person who ever loved you is still cheering for the person you are becoming.",
-                "The road you are on is yours alone. No one else can walk it. That makes you brave, not lost."
+            adrift: [
+                "You are not lost; you are exploring new paths. Growth happens in the unknown.",
+                "Some of the best places are found when you’re off course. You might find something amazing.",
+                "You don’t need to have it all figured out. Embrace the journey."
             ],
-            tired: [
-                "The people who loved you first would want you to rest. You do not have to earn your place here. You already belong.",
-                "Your exhaustion is proof of how hard you've been trying. Someone who cares about you is proud of that effort.",
-                "You have carried others when they couldn't carry themselves. Now let yourself be carried. You deserve that tenderness."
+            quiet: [
+                "There is wisdom in being still. Your quiet is where new beginnings grow.",
+                "The world is loud, but your stillness is a gift.",
+                "Some of the best changes happen in silence. You are growing."
             ],
-            okay: [
-                "Okay is enough. The person who first said they loved you would think you are perfect exactly as you are in this moment.",
-                "You don't have to be extraordinary to be deeply loved. You were loved before you did anything at all.",
-                "Someone is grateful for your ordinary Tuesday existence. You make life better just by being in it."
-            ],
-            hopeful: [
-                "Your hope is a gift to every person who ever invested their love in you. You are living proof that their love worked.",
-                "The light in your eyes right now would make someone who loves you cry happy tears. You are their answered prayer.",
-                "Your hope is not naive. It is the strongest thing about you. Someone who raised you would be so proud."
+            glimmer: [
+                "That little hope you feel? Hold onto it. It’s the start of something good.",
+                "Your ability to find light in darkness is special. It will guide you.",
+                "This glimmer shows that better days are coming."
             ]
         };
 
+        function createFloatingShapes() {
+            const shapesContainer = document.getElementById('floatingShapes');
+            const colors = ['#8e44ad', '#9b59b6', '#d1c4e9', '#e1bee7', '#f3e5f5'];
+
+            // Remove old shapes before adding new ones
+            shapesContainer.innerHTML = '';
+
+            for (let i = 0; i < 15; i++) {
+                const shape = document.createElement('div');
+                shape.className = 'shape';
+
+                const size = Math.random() * 30 + 10;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+                shape.style.background = color;
+                shape.style.left = `${Math.random() * 100}vw`;
+                shape.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                shape.style.animationDelay = `${Math.random() * 5}s`;
+
+                shapesContainer.appendChild(shape);
+            }
+        }
+
+        function saveMemory() {
+            const memoryText = document.getElementById('memoryInput').value.trim();
+            if (memoryText) {
+                const now = new Date();
+                const memory = {
+                    text: memoryText,
+                    date: now.toLocaleDateString() + ' ' + now.toLocaleTimeString()
+                };
+
+                let memories = JSON.parse(localStorage.getItem('memories')) || [];
+                memories.unshift(memory);
+                localStorage.setItem('memories', JSON.stringify(memories));
+
+                displayMemories();
+
+                document.getElementById('memoryInput').value = '';
+
+                const moodResponse = document.getElementById('moodResponse');
+                moodResponse.innerHTML = "This moment is now saved. Come back to it whenever you need a reminder.";
+                moodResponse.classList.add('gentle-glow');
+                setTimeout(() => moodResponse.classList.remove('gentle-glow'), 3000);
+            }
+        }
+
+        function displayMemories() {
+            const memoriesContainer = document.getElementById('savedMemories');
+            const memories = JSON.parse(localStorage.getItem('memories')) || [];
+
+            memoriesContainer.innerHTML = '';
+
+            if (memories.length === 0) {
+                memoriesContainer.innerHTML = '<p style="text-align: center; color: #7f8c8d;">Your special moments will appear here.</p>';
+                return;
+            }
+
+            memories.forEach(memory => {
+                const memoryElement = document.createElement('div');
+                memoryElement.className = 'memory-item';
+                memoryElement.innerHTML = `
+                    <div class="memory-date">${memory.date}</div>
+                    <div class="memory-text">${memory.text}</div>
+                `;
+                memoriesContainer.appendChild(memoryElement);
+            });
+        }
+
         function showMessage(category) {
-            console.log('showMessage called with:', category);
             const messageArray = messages[category];
             if (messageArray) {
                 const randomMessage = messageArray[Math.floor(Math.random() * messageArray.length)];
-                document.getElementById('mainMessage').innerHTML = randomMessage;
-                
+                const mainMessage = document.getElementById('mainMessage');
+                mainMessage.innerHTML = randomMessage;
+
                 const section = document.querySelector('.message-section');
                 section.style.animation = 'none';
-                setTimeout(() => {
-                    section.style.animation = 'fadeInDown 0.8s ease-out';
-                }, 10);
-            } else {
-                console.error('No messages found for category:', category);
+                void section.offsetWidth; // Trigger reflow
+                section.style.animation = 'fadeInDown 1s ease-out';
             }
         }
 
         function handleMood(mood) {
             const responses = moodResponses[mood];
+            if (!responses) return;
             const randomResponse = responses[Math.floor(Math.random() * responses.length)];
             const responseElement = document.getElementById('moodResponse');
             responseElement.innerHTML = randomResponse;
-            
+
             responseElement.classList.add('gentle-glow');
-            setTimeout(() => {
-                responseElement.classList.remove('gentle-glow');
-            }, 2000);
+            setTimeout(() => responseElement.classList.remove('gentle-glow'), 3000);
         }
 
-        function createFloatingShape() {
-            const shape = document.createElement('div');
-            shape.className = 'shape';
-            shape.style.left = Math.random() * 100 + 'vw';
-            shape.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            shape.style.animationDelay = Math.random() * 3 + 's';
-            
-            document.querySelector('.floating-shapes').appendChild(shape);
-            
+        window.onload = function() {
+            createFloatingShapes();
+            displayMemories();
+
             setTimeout(() => {
-                shape.remove();
-            }, 12000);
-        }
+                showMessage('worth');
+            }, 1500);
 
-        setInterval(createFloatingShape, 2000);
-
-        // Initialize with a powerful message
-        setTimeout(() => {
-            showMessage('inspiration');
-        }, 1000);
+            setInterval(() => {
+                createFloatingShapes();
+            }, 5000);
+        };
     </script>
 </body>
 </html>
+
